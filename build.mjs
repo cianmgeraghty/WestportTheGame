@@ -5,7 +5,6 @@ await mkdir("dist/server", { recursive: true });
 await mkdir("dist/assets", { recursive: true });
 for (const file of files) await cp(file, `dist/${file}`);
 await cp("assets/westport-logo.png", "dist/assets/westport-logo.png");
-await cp("godot-live", "dist/godot", { recursive: true });
 const html = JSON.stringify(await readFile("index.html", "utf8"));
 const css = JSON.stringify(await readFile("styles.css", "utf8"));
 const js = JSON.stringify(await readFile("app2.js", "utf8"));

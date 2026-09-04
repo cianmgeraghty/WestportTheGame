@@ -6,7 +6,7 @@ function showGame() {
   game.hidden = false;
   game.setAttribute('aria-hidden', 'false');
   document.body.dataset.screen = 'game';
-  scene.innerHTML = '<iframe title="Westport 3D Godot prototype" src="godot/index.html" allow="fullscreen; gamepad" loading="eager"></iframe>';
+  scene.innerHTML = '<iframe title="Westport 3D Godot prototype" src="https://cianmgeraghty.github.io/WestportTheGame/godot-live/index.html" allow="fullscreen; gamepad" loading="eager"></iframe>';
   ['#joystick', '#drive', '.legend', '.location', '#map'].forEach((s) => { const el = document.querySelector(s); if (el) el.hidden = true; });
 }
 function showLanding() { game.hidden = true; game.setAttribute('aria-hidden', 'true'); landing.hidden = false; document.body.dataset.screen = 'landing'; scene.replaceChildren(); }
