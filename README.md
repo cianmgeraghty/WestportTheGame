@@ -52,6 +52,6 @@ The target feel is a warm, recognisable, stylised Irish town sandbox: geographic
 
 For the current desktop 3D test, open `godot/project.godot` with Godot 4.7.2 and run the project. The Godot scene generates a small 3D central-Westport greybox at runtime, including roads, the Octagon, a stylised Clock Tower landmark, buildings, a player character and a car placeholder. This is the first proper 3D foundation; geographic data and authored landmark assets are the next quality pass.
 
-The original Unity scaffolding remains under `Assets/` for reference, but Godot is now the active engine path because it avoids the Unity Hub authentication and installer problems on this machine.
+The current Godot checkpoint also includes a virtual touch joystick, a drive action button, and an Android export preset (`godot/export_presets.cfg`). The original Unity scaffolding remains under `Assets/` for reference, but Godot is now the active engine path because it avoids the Unity Hub authentication and installer problems on this machine.
 
 For a phone test, serve the `web/` folder from an HTTPS static host and open its URL on your phone. It is an installable PWA with touch controls; the landing page offers installation when supported. The app icon is `web/assets/westport-logo.png`.
