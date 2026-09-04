@@ -30,4 +30,6 @@ This repository contains project scaffolding and planning material only; geograp
 
 ## Prototype setup
 
-Open the repository as a Unity 2022.3 LTS project and open `Assets/Scenes/WestportPrototype.unity`. Press Play: the scene builds a small greybox automatically. Use `WASD`/arrow keys to move, `Shift` to run, and `E` near the car to enter or exit. This is intentionally art-free scaffolding; the next pass will replace the generated roads and building blocks with imported geographic data.
+For a desktop 3D test, open the repository as a Unity 2022.3 LTS project and open `Assets/Scenes/WestportPrototype.unity`.
+
+For a phone test, serve the `web/` folder from an HTTPS static host and open its URL on your phone. It is an installable PWA with touch controls; the landing page offers installation when supported. The app icon is `web/assets/westport-logo.png`.
