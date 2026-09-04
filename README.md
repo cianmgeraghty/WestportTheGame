@@ -28,6 +28,26 @@ docs/            Planning notes, mapping/licensing notes, and design documentati
 
 This repository contains project scaffolding and planning material only; geographic source data and imagery will be added with appropriate attribution and licensing.
 
+## The long-term vision
+
+Westport: The Game is intended to become a shareable, stylised open-world mobile game set in the real Westport, County Mayo. The town itself is the main character: streets, landmarks, bridges, businesses and the surrounding landscape should feel recognisably Westport even when the art style is deliberately game-like rather than photorealistic.
+
+The geographic foundation should use appropriately licensed map data, satellite references and town imagery. The first playable district is central Westport, expanding over time toward the Quay, Castlebar Road, Newport Road and other surrounding areas. Roads and building footprints should be faithful; individual facades, interiors and decorative detail can be added in priority order.
+
+The player should eventually be able to:
+
+- walk, run and drive around the town, with simple mobile touch controls
+- enter and leave a small number of drivable vehicles
+- recognise and visit real-world pubs, shops, hotels, restaurants and other points of interest
+- enter selected businesses with bespoke interiors and interactions
+- meet fictional NPCs and follow missions, jobs and local storylines
+- earn and spend money, discover places and build a personal story in town
+- trigger a fictional Garda response or wanted system when causing trouble, clearly presented as game fiction
+
+Real businesses and real people must not be portrayed as endorsing, committing or being associated with fictional wrongdoing. Businesses can be represented neutrally, and fictional businesses, characters and story events can be added wherever the game needs them.
+
+The target feel is a warm, recognisable, stylised Irish town sandbox: geographically accurate enough to spark the joy of knowing Westport, but playful enough to support exploration, missions and emergent moments with friends. The mobile app and its game-specific website are the intended way to access and share the finished project.
+
 ## Prototype setup
 
 For a desktop 3D test, open the repository as a Unity 2022.3 LTS project and open `Assets/Scenes/WestportPrototype.unity`.
