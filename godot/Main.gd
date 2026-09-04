@@ -5,6 +5,9 @@ const GROUND := Color("#9ab7a7")
 const HOUSE := [Color("#c67b5a"), Color("#d1a35d"), Color("#6f9b9d"), Color("#b96a57")]
 var player: CharacterBody3D
 var camera: Camera3D
+var touch_vector := Vector2.ZERO
+var driving := false
+var joystick: Control
 
 func material(color: Color) -> StandardMaterial3D:
 	var m := StandardMaterial3D.new()
@@ -37,6 +40,49 @@ func cylinder(parent: Node3D, pos: Vector3, radius: float, height: float, color:
 func _ready() -> void:
 	build_world()
 	build_player()
+	build_mobile_ui()
+
+func build_mobile_ui() -> void:
+	var layer := CanvasLayer.new()
+	layer.name = "MobileControls"
+	add_child(layer)
+	joystick = preload("res://VirtualJoystick.gd").new()
+	joystick.name = "MoveJoystick"
+	joystick.set_anchors_preset(Control.PRESET_BOTTOM_LEFT)
+	joystick.position = Vector2(22, -182)
+	joystick.size = Vector2(160, 160)
+	joystick.vector_changed.connect(func(v: Vector2): touch_vector = v)
+	layer.add_child(joystick)
+	var title := Label.new()
+	title.text = "WESTPORT  //  FIELD TEST 0.2"
+	title.position = Vector2(24, 22)
+	title.add_theme_color_override("font_color", Color("#f2d28a"))
+	title.add_theme_font_size_override("font_size", 18)
+	layer.add_child(title)
+	var hint := Label.new()
+	hint.text = "OCTAGON  ·  BRIDGE STREET"
+	hint.position = Vector2(25, 49)
+	hint.add_theme_color_override("font_color", Color("#d7e5df"))
+	hint.add_theme_font_size_override("font_size", 12)
+	layer.add_child(hint)
+	var drive := Button.new()
+	drive.text = "GET IN CAR"
+	drive.position = Vector2(-170, -90)
+	drive.set_anchors_preset(Control.PRESET_BOTTOM_RIGHT)
+	drive.size = Vector2(145, 52)
+	drive.pressed.connect(toggle_drive)
+	layer.add_child(drive)
+	var controls := Label.new()
+	controls.text = "WASD / JOYSTICK TO WALK   ·   DRIVE TO TAKE THE WHEEL"
+	controls.set_anchors_preset(Control.PRESET_CENTER_BOTTOM)
+	controls.position = Vector2(-190, -22)
+	controls.add_theme_color_override("font_color", Color(0.85, 0.9, 0.86, 0.82))
+	controls.add_theme_font_size_override("font_size", 11)
+	layer.add_child(controls)
+
+func toggle_drive() -> void:
+	if player.position.distance_to(Vector3(10, 1.1, 10)) < 18.0:
+		driving = not driving
 
 func build_world() -> void:
 	var world := Node3D.new()
@@ -106,8 +152,10 @@ func _physics_process(_delta: float) -> void:
 	if not player:
 		return
 	var input := Input.get_vector("move_left", "move_right", "move_forward", "move_back")
+	if touch_vector.length() > 0.05:
+		input = touch_vector
 	var direction := Vector3(input.x, 0, input.y)
-	player.velocity = direction * 5.0
+	player.velocity = direction * (7.0 if driving else 5.0)
 	player.move_and_slide()
 	player.position.y = 1.1
 	if direction.length() > 0.1:
