@@ -1,6 +1,6 @@
 import { cp, mkdir, readFile, writeFile } from "node:fs/promises";
 
-const files = ["index.html", "styles.css", "app.js", "three-app.js", "interaction-fix.js", "manifest.webmanifest", "sw.js"];
+const files = ["index.html", "styles.css", "app.js", "interaction-fix.js", "manifest.webmanifest", "sw.js"];
 await mkdir("dist/server", { recursive: true });
 await mkdir("dist/assets", { recursive: true });
 for (const file of files) await cp(file, `dist/${file}`);
@@ -8,7 +8,6 @@ await cp("assets/westport-logo.png", "dist/assets/westport-logo.png");
 const html = JSON.stringify(await readFile("index.html", "utf8"));
 const css = JSON.stringify(await readFile("styles.css", "utf8"));
 const js = JSON.stringify((await readFile("app.js", "utf8")) + "\n" + (await readFile("three-layer.js", "utf8")));
-const three = JSON.stringify(await readFile("three-app.js", "utf8"));
 const manifest = JSON.stringify(await readFile("manifest.webmanifest", "utf8"));
 const sw = JSON.stringify(await readFile("sw.js", "utf8"));
 const fix = JSON.stringify(await readFile("interaction-fix.js", "utf8"));
