@@ -8,7 +8,7 @@
   <link rel="manifest" href="manifest.webmanifest" />
   <link rel="icon" href="assets/westport-logo.png" />
   <link rel="stylesheet" href="styles.css" />
-  <title>Westport: The Game</title><style>[hidden]{display:none!important}</style>
+  <title>Westport: The Game</title><style>[hidden]{display:none!important}#scene{position:absolute;inset:0;overflow:hidden}#scene canvas{display:block;width:100%;height:100%}</style>
 </head>
 <body data-screen="landing">
   <main id="landing" class="landing">
@@ -24,7 +24,7 @@
 
   <main id="game" class="game" hidden aria-hidden="true">
     <header class="hud"><button id="back" class="icon-button" aria-label="Back to home">←</button><div><strong>WESTPORT // MAYO</strong><small>FIELD TEST · 0.2</small></div><button id="reset" class="icon-button" aria-label="Reset position">↻</button></header>
-    <canvas id="map" aria-label="Playable Westport prototype map"></canvas>
+    <canvas id="map" aria-hidden="true" hidden></canvas><div id="scene" role="img" aria-label="Playable 3D Westport prototype scene"></div>
     <div class="location"><span class="pulse"></span><span id="place">Bridge Street</span><span class="dot">•</span><span id="mode">ON FOOT</span></div>
     <div id="joystick" class="joystick"><div class="stick"></div></div>
     <button id="drive" class="drive-button">GET IN CAR</button>
@@ -38,6 +38,6 @@
       document.querySelector('#game').setAttribute('aria-hidden', 'false');
     }
   </script>
-  <script src="app.js?v=10"></script><script src="interaction-fix.js?v=10"></script>
+  <script src="app.js?v=11"></script><script src="interaction-fix.js?v=10"></script>
 </body>
 </html>
