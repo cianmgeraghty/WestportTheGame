@@ -8,6 +8,8 @@
 [Uu]ser[Ss]ettings/
 MemoryCaptures/
 Recordings/
+dist/
+*.tar.gz
 
 # IDE and OS files
 .vs/
