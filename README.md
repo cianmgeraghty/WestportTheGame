@@ -27,3 +27,7 @@ docs/            Planning notes, mapping/licensing notes, and design documentati
 ```
 
 This repository contains project scaffolding and planning material only; geographic source data and imagery will be added with appropriate attribution and licensing.
+
+## Prototype setup
+
+Open the repository as a Unity 2022.3 LTS project. Create a scene with a `GeoReference` object, a ground plane, a player with `CharacterController` + `ThirdPersonWalker`, and a car with `Rigidbody` + `SimpleCarController` + `VehicleInteractor`. Assign the main camera to the walker and use `WASD`/arrow keys to move, `Shift` to run, and `E` near the car to enter or exit.

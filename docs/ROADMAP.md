@@ -8,6 +8,10 @@
 6. Add one drivable car with enter/exit interaction.
 7. Replace priority placeholders with recognisable Westport landmarks and facades.
 
+## Current implementation
+
+The repository now includes the first reusable gameplay scripts: `GeoReference` for WGS84-to-Unity coordinates, `ThirdPersonWalker` for third-person movement, and `SimpleCarController`/`VehicleInteractor` for the first drivable-car loop.
+
 ## Out of scope for v0.1
 
 Missions, combat, police/Garda systems, traffic AI, NPC schedules, business interiors, and photorealistic assets.
