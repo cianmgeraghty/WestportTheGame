@@ -29,6 +29,14 @@
     <button id="drive" class="drive-button">GET IN CAR</button>
     <div class="legend"><span><i class="you"></i>You</span><span><i class="car"></i>Car</span></div>
   </main>
-  <script src="app.js"></script><script src="interaction-fix.js"></script>
+  <script>
+    if (location.search.includes('play=1') || location.hash === '#prototype') {
+      document.body.dataset.screen = 'game';
+      document.querySelector('#landing').hidden = true;
+      document.querySelector('#game').hidden = false;
+      document.querySelector('#game').setAttribute('aria-hidden', 'false');
+    }
+  </script>
+  <script src="app.js?v=10"></script><script src="interaction-fix.js?v=10"></script>
 </body>
 </html>
