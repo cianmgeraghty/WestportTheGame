@@ -23,6 +23,7 @@ namespace WestportTheGame.Player
 
         private void Update()
         {
+            if (cameraTransform == null && Camera.main != null) cameraTransform = Camera.main.transform;
             var input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
             var direction = new Vector3(input.x, 0f, input.y);
             if (direction.sqrMagnitude > 1f) direction.Normalize();

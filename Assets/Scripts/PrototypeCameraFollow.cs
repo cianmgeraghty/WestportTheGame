@@ -1,0 +1,2 @@
+using UnityEngine;
+namespace WestportTheGame { public sealed class PrototypeCameraFollow:MonoBehaviour { public Transform Target{get;set;} [SerializeField] Vector3 offset=new Vector3(0,7,-9); [SerializeField] float sharpness=10; void LateUpdate(){if(Target==null)return;transform.position=Vector3.Lerp(transform.position,Target.position+offset,1-Mathf.Exp(-sharpness*Time.deltaTime));transform.LookAt(Target.position+Vector3.up*1.2f);} } }

@@ -30,4 +30,4 @@ This repository contains project scaffolding and planning material only; geograp
 
 ## Prototype setup
 
-Open the repository as a Unity 2022.3 LTS project. Create a scene with a `GeoReference` object, a ground plane, a player with `CharacterController` + `ThirdPersonWalker`, and a car with `Rigidbody` + `SimpleCarController` + `VehicleInteractor`. Assign the main camera to the walker and use `WASD`/arrow keys to move, `Shift` to run, and `E` near the car to enter or exit.
+Open the repository as a Unity 2022.3 LTS project and open `Assets/Scenes/WestportPrototype.unity`. Press Play: the scene builds a small greybox automatically. Use `WASD`/arrow keys to move, `Shift` to run, and `E` near the car to enter or exit. This is intentionally art-free scaffolding; the next pass will replace the generated roads and building blocks with imported geographic data.
